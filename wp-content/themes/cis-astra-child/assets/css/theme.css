@@ -1058,3 +1058,9 @@ body .member h2 {
 
 /* Safari prefix for the blurred glass card */
 .spot-event { -webkit-backdrop-filter: blur(3px); }
+
+/* Hero dots: stronger and softly glowing */
+.hero-dots span {
+    background: radial-gradient(circle, rgba(215, 240, 255, var(--o)) 0%, rgba(170, 215, 255, calc(var(--o) * .55)) 38%, rgba(170, 215, 255, 0) 72%);
+    box-shadow: 0 0 14px rgba(170, 215, 255, .25);
+}
