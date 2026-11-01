@@ -1064,3 +1064,9 @@ body .member h2 {
     background: radial-gradient(circle, rgba(215, 240, 255, var(--o)) 0%, rgba(170, 215, 255, calc(var(--o) * .55)) 38%, rgba(170, 215, 255, 0) 72%);
     box-shadow: 0 0 14px rgba(170, 215, 255, .25);
 }
+
+/* Hero dots: soft and faint, like a blurred glow */
+.hero-dots span {
+    background: radial-gradient(circle, rgba(180, 225, 255, var(--o)) 0%, rgba(180, 225, 255, 0) 70%);
+    box-shadow: none;
+}
