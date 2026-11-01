@@ -1070,3 +1070,34 @@ body .member h2 {
     background: radial-gradient(circle, rgba(180, 225, 255, var(--o)) 0%, rgba(180, 225, 255, 0) 70%);
     box-shadow: none;
 }
+
+/* Young immunologists section: event rows, Instagram button */
+.spot-event { padding: 28px 30px 22px; }
+.spot-row {
+    display: grid;
+    grid-template-columns: 78px 1fr auto;
+    gap: 18px;
+    align-items: center;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, .22);
+    color: var(--white);
+    transition: padding-left .3s ease;
+}
+
+.spot-row:hover { padding-left: 8px; }
+.spot-row .spot-date { flex: none; padding: 8px 0; font-size: 11px; }
+.spot-row .spot-date b { font-size: 32px; }
+.spot-row .spot-info strong { font-size: 21px; }
+.spot-row .spot-count { margin: 0; padding: 5px 12px; font-size: 12px; white-space: nowrap; }
+.spot-all { display: inline-block; margin-top: 18px; color: #8fcaff; font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+.spot-all:hover { color: var(--white); }
+.spot-note { margin: 18px 0 0; }
+.spot-note a { color: #8fcaff; font-size: 14px; text-decoration: underline; text-underline-offset: 4px; }
+.btn-icon { display: inline-flex; align-items: center; gap: 8px; }
+.btn-icon svg { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+
+@media (max-width: 640px) {
+    .spot-row { grid-template-columns: 64px 1fr; gap: 14px; }
+    .spot-row .spot-count { grid-column: 2; justify-self: start; }
+    .spot-row .spot-info strong { font-size: 18px; }
+}
