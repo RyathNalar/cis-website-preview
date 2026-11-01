@@ -1,4 +1,4 @@
-/* Visual effects: sticky header shadow, floating particles in the hero, reveal on scroll, count-up.
+/* Visual effects: sticky header shadow, reveal on scroll, count-up.
    Everything is switched off for visitors who prefer reduced motion. */
 (function () {
     var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -15,72 +15,6 @@
     onScroll();
 
     if (reduce) return;
-
-    /* Floating particles over the hero */
-    var canvas = document.querySelector('.hero-fx');
-    if (canvas && canvas.getContext) {
-        var ctx = canvas.getContext('2d');
-        var W = 0, H = 0, dpr = Math.min(window.devicePixelRatio || 1, 2);
-        var particles = [];
-        var running = true;
-
-        function resize() {
-            W = canvas.clientWidth;
-            H = canvas.clientHeight;
-            canvas.width = W * dpr;
-            canvas.height = H * dpr;
-            ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-        }
-
-        function spawn(initial) {
-            return {
-                x: Math.random() * W,
-                y: initial ? Math.random() * H : H + 20,
-                r: 2 + Math.random() * 8,
-                vy: 0.12 + Math.random() * 0.35,
-                sway: Math.random() * Math.PI * 2,
-                swaySpeed: 0.004 + Math.random() * 0.01,
-                a: 0.10 + Math.random() * 0.26
-            };
-        }
-
-        function init() {
-            resize();
-            var count = W < 700 ? 14 : 34;
-            particles = [];
-            for (var i = 0; i < count; i++) particles.push(spawn(true));
-        }
-
-        function frame() {
-            if (running && !document.hidden) {
-                ctx.clearRect(0, 0, W, H);
-                for (var i = 0; i < particles.length; i++) {
-                    var p = particles[i];
-                    p.y -= p.vy;
-                    p.sway += p.swaySpeed;
-                    var x = p.x + Math.sin(p.sway) * 14;
-                    if (p.y < -20) particles[i] = spawn(false);
-                    var g = ctx.createRadialGradient(x, p.y, 0, x, p.y, p.r * 2.6);
-                    g.addColorStop(0, 'rgba(180,225,255,' + p.a + ')');
-                    g.addColorStop(1, 'rgba(180,225,255,0)');
-                    ctx.fillStyle = g;
-                    ctx.beginPath();
-                    ctx.arc(x, p.y, p.r * 2.6, 0, Math.PI * 2);
-                    ctx.fill();
-                }
-            }
-            requestAnimationFrame(frame);
-        }
-
-        init();
-        window.addEventListener('resize', init);
-        if (hasIO) {
-            new IntersectionObserver(function (entries) {
-                running = entries[0].isIntersecting;
-            }).observe(canvas);
-        }
-        requestAnimationFrame(frame);
-    }
 
     if (!hasIO) return;
 

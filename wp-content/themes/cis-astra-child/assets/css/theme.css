@@ -994,12 +994,67 @@ body .member h2 {
     .spot-date b { font-size: 36px; }
     .spot-info strong { font-size: 21px; }
 }
-
-/* Phone: committee cards two per row */
-@media (max-width: 600px) {
-    .cis-people { grid-template-columns: repeat(2, 1fr); gap: 22px 14px; }
-    .cis-person .photo { font-size: 38px; }
-    .cis-person strong { font-size: 15px; }
-    .cis-person .affil { font-size: 12px; }
-    .cis-people.compact { grid-template-columns: 1fr; }
-}
+
+/* Phone: committee cards two per row */
+@media (max-width: 600px) {
+    .cis-people { grid-template-columns: repeat(2, 1fr); gap: 22px 14px; }
+    .cis-person .photo { font-size: 38px; }
+    .cis-person strong { font-size: 15px; }
+    .cis-person .affil { font-size: 12px; }
+    .cis-people.compact { grid-template-columns: 1fr; }
+}
+
+/* Hero dots: plain CSS animation (stable in Safari, no canvas) */
+.hero-fx { display: none; }
+
+.hero-dots {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.hero-dots span {
+    position: absolute;
+    bottom: -60px;
+    left: var(--x);
+    width: var(--s);
+    height: var(--s);
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(190, 228, 255, var(--o)) 0%, rgba(190, 228, 255, 0) 70%);
+    opacity: 0;
+    -webkit-animation: cisDot var(--d) linear infinite;
+    animation: cisDot var(--d) linear infinite;
+    -webkit-animation-delay: var(--dl);
+    animation-delay: var(--dl);
+    will-change: transform, opacity;
+}
+
+@-webkit-keyframes cisDot {
+    0% { -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); opacity: 0; }
+    12% { opacity: 1; }
+    88% { opacity: 1; }
+    100% { -webkit-transform: translate3d(var(--w), -720px, 0); transform: translate3d(var(--w), -720px, 0); opacity: 0; }
+}
+
+@keyframes cisDot {
+    0% { transform: translate3d(0, 0, 0); opacity: 0; }
+    12% { opacity: 1; }
+    88% { opacity: 1; }
+    100% { transform: translate3d(var(--w), -720px, 0); opacity: 0; }
+}
+
+@media (max-width: 700px) {
+    .hero-dots span.hide-sm { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-dots { display: none; }
+}
+
+/* Safari prefix for the blurred glass card */
+.spot-event { -webkit-backdrop-filter: blur(3px); }
