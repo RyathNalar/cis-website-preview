@@ -1124,3 +1124,8 @@ body .member h2 {
 .cis-footer-grid { grid-template-columns: 1.2fr 1fr; }
 @media (max-width: 1100px) { .cis-footer-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 600px) { .cis-footer-grid { grid-template-columns: 1fr; } }
+
+/* Footer: logo, contact and partners (the "On this site" column is gone) */
+.cis-footer-grid { grid-template-columns: 1.15fr 1fr 1.1fr; }
+@media (max-width: 1100px) { .cis-footer-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 600px) { .cis-footer-grid { grid-template-columns: 1fr; } }
