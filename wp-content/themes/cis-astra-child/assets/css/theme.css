@@ -1235,3 +1235,10 @@ body .member h2 {
 	.cis-footer-brand { order: -1; }
 }
 body footer.cis-footer .cis-footer-brand h3 { margin-top: 26px; }
+
+/* Partner logos: white-on-blue artwork sits directly on the footer (no tiles) */
+.cis-partner-list { flex-direction: column; align-items: flex-start; gap: 26px; }
+.cis-partner-logo { width: auto; height: auto; padding: 0; background: none; border-radius: 0; }
+.cis-partner-logo img { display: block; height: 64px; width: auto; max-width: 100%; }
+.cis-partner-list li:first-child .cis-partner-logo img { height: 96px; }
+.cis-partner-list a:hover { opacity: .85; }
