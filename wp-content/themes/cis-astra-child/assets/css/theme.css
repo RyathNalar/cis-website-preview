@@ -1119,3 +1119,33 @@ body .member h2 {
     .spot-row .spot-count { grid-column: 1 / -1; justify-self: start; margin-top: 8px; }
     .spot-all { margin-top: 14px; }
 }
+
+/* Compact footer: logo and one contact block; the site's own links live in the menu and the dock */
+footer.cis-footer { padding: 40px 0 18px; }
+
+.cis-footer-grid {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 48px;
+    align-items: center;
+}
+
+.cis-footer-logo { width: 170px; height: 90px; }
+.cis-footer-tagline { margin: 8px 0 0; font-size: 18px; }
+.cis-footer-contact { text-align: right; }
+footer.cis-footer .cis-footer-contact p { margin: 0 0 10px; font-size: 15px; line-height: 1.65; }
+.cis-footer-contact .cis-footer-social { justify-content: flex-end; margin: 0; }
+.cis-footer-mail { font-size: 15px; }
+.cis-footer-bottom { margin-top: 26px; padding-top: 14px; font-size: 13px; }
+
+@media (max-width: 700px) {
+    footer.cis-footer { padding: 30px 0 14px; }
+    .cis-footer-grid { grid-template-columns: 1fr; gap: 16px; }
+    .cis-footer-logo { width: 140px; height: 74px; }
+    .cis-footer-tagline { display: none; }
+    .cis-footer-contact { text-align: left; }
+    footer.cis-footer .cis-footer-contact p { font-size: 14px; line-height: 1.55; margin-bottom: 8px; }
+    .cis-footer-contact .cis-footer-social { justify-content: flex-start; gap: 6px 16px; }
+    .cis-footer-social a { font-size: 14px; }
+    .cis-footer-bottom { flex-direction: column; gap: 4px; margin-top: 18px; padding-top: 12px; font-size: 12px; }
+}
