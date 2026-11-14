@@ -1129,3 +1129,76 @@ body .member h2 {
 .cis-footer-grid { grid-template-columns: 1.15fr 1fr 1.1fr; }
 @media (max-width: 1100px) { .cis-footer-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 600px) { .cis-footer-grid { grid-template-columns: 1fr; } }
+
+/* ---------------------------------------------------------------
+   Members' Area: login, downloads, galleries, videos, account
+   --------------------------------------------------------------- */
+.cis-login { max-width: 420px; margin: 8px 0 18px; padding: 28px 28px 20px; background: var(--pale); border-top: 3px solid var(--blue); }
+.cis-login form p { margin: 0 0 16px; }
+.cis-login label { display: block; color: var(--navy); font-size: 14px; font-weight: 600; }
+.cis-login input[type="text"],
+.cis-login input[type="password"],
+.cis-form input[type="password"] { width: 100%; margin-top: 6px; padding: 12px 14px; border: 1px solid #c3cfdb; border-radius: 0; background: #fff; font-size: 16px; }
+.cis-login input:focus,
+.cis-form input:focus { outline: 2px solid var(--blue); outline-offset: 0; }
+.cis-login .login-remember label { display: flex; align-items: center; gap: 8px; font-weight: 400; }
+.cis-login input[type="submit"] { padding: 13px 26px; border: 0; background: var(--blue); color: #fff; font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; cursor: pointer; }
+.cis-login input[type="submit"]:hover { background: #0d4f9e; }
+.cis-login-help { margin: 4px 0 0; font-size: 14px; }
+.cis-login-note { max-width: 420px; color: var(--muted); font-size: 14px; }
+.cis-form { max-width: 420px; }
+.cis-form label { display: block; color: var(--navy); font-size: 14px; font-weight: 600; }
+.cis-note { color: var(--muted); font-size: 14px; }
+.cis-welcome { margin: 0 0 8px; color: var(--navy); font-family: 'Playfair Display', Georgia, serif; font-size: 26px; }
+.cis-callout-error { background: #fdecea; border-left-color: #cf222e; }
+.cis-callout-warn { background: #fff6e0; border-left-color: #d29922; }
+.btn.ghost { background: transparent; border: 1px solid var(--blue); }
+
+.cis-material {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 18px 22px;
+    margin: 0 0 12px;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--blue);
+}
+
+.cis-material-main strong { display: block; color: var(--navy); font-size: 18px; }
+.cis-material-main .meta { display: block; margin-top: 2px; color: var(--muted); font-size: 13px; }
+.cis-material-main p { margin: 8px 0 0; color: #435166; font-size: 15px; line-height: 1.6; }
+.cis-material .btn { flex: none; }
+
+.cis-albums { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 24px; margin: 24px 0; }
+.cis-album { display: block; }
+.cis-album .cover { display: block; aspect-ratio: 4 / 3; overflow: hidden; background: linear-gradient(135deg, #d6e4f4, #eef4fb); }
+.cis-album .cover img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+.cis-album:hover .cover img { transform: scale(1.05); }
+.cis-album strong { display: block; margin-top: 12px; color: var(--navy); font-family: 'Playfair Display', Georgia, serif; font-size: 21px; line-height: 1.25; }
+.cis-album em { display: block; margin-top: 4px; color: var(--muted); font-size: 13px; font-style: normal; }
+
+.cis-photo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 10px; margin: 28px 0; }
+.cis-photo-grid a { display: block; aspect-ratio: 1 / 1; overflow: hidden; background: var(--pale); }
+.cis-photo-grid img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; }
+.cis-photo-grid a:hover img { transform: scale(1.05); }
+
+.cis-video-frame { max-width: 960px; margin: 0 0 28px; background: #0b1a33; aspect-ratio: 16 / 9; }
+.cis-video-frame iframe,
+.cis-video-frame video { display: block; width: 100%; height: 100%; border: 0; background: #000; }
+.cis-video-frame p { padding: 40px; margin: 0; }
+
+.cis-lightbox { position: fixed; top: 0; right: 0; bottom: 0; left: 0; z-index: 1000; display: none; align-items: center; justify-content: center; background: rgba(5, 15, 35, .94); }
+.cis-lightbox.open { display: flex; }
+.cis-lightbox img { max-width: 92vw; max-height: 88vh; object-fit: contain; }
+.cis-lightbox button { position: absolute; border: 0; background: transparent; color: #fff; font-size: 44px; line-height: 1; cursor: pointer; opacity: .8; }
+.cis-lightbox button:hover { opacity: 1; }
+.cis-lightbox .lb-close { top: 14px; right: 22px; font-size: 40px; }
+.cis-lightbox .lb-prev { left: 14px; top: 50%; transform: translateY(-50%); }
+.cis-lightbox .lb-next { right: 14px; top: 50%; transform: translateY(-50%); }
+
+@media (max-width: 640px) {
+    .cis-material { flex-direction: column; align-items: flex-start; gap: 14px; }
+    .cis-login { padding: 22px 18px 14px; }
+}
