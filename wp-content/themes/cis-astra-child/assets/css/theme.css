@@ -1242,3 +1242,10 @@ body footer.cis-footer .cis-footer-brand h3 { margin-top: 26px; }
 .cis-partner-logo img { display: block; height: 64px; width: auto; max-width: 100%; }
 .cis-partner-list li:first-child .cis-partner-logo img { height: 96px; }
 .cis-partner-list a:hover { opacity: .85; }
+
+/* Partner logos: every logo gets the same box so none looks bigger than the others */
+.cis-partner-list { flex-direction: row; flex-wrap: wrap; gap: 20px 40px; align-items: center; }
+.cis-partner-list li:first-child .cis-partner-logo img { height: auto; }
+.cis-partner-logo { display: flex; align-items: center; justify-content: flex-start; width: 240px; height: 64px; }
+.cis-partner-logo img { height: auto; width: auto; max-width: 100%; max-height: 100%; }
+@media (max-width: 900px) { .cis-partner-list { flex-direction: column; align-items: flex-start; gap: 24px; } }
