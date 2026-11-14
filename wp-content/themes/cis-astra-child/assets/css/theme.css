@@ -1256,3 +1256,10 @@ body footer.cis-footer .cis-footer-brand h3 { margin-top: 26px; }
 	.cis-partner-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px 22px; }
 	.cis-partner-logo { width: 100%; height: 60px; }
 }
+
+/* Footer: partners left, contact block flush right (its right edge lines up with the bottom line) */
+body footer.cis-footer .cis-footer-brand h3 { margin-top: 0; }
+@media (min-width: 901px) {
+	.cis-footer-grid { grid-template-columns: 1fr auto; gap: 56px; }
+	.cis-footer-brand { justify-self: end; min-width: 300px; }
+}
