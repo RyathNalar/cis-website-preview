@@ -47,26 +47,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-/* Laureate list: a search box above it (added here so the page text stays plain). */
-document.addEventListener('DOMContentLoaded', function () {
-    var list = document.querySelector('.cis-names');
-    if (!list) return;
-    var en = (document.documentElement.lang || '').indexOf('en') === 0;
-    var box = document.createElement('input');
-    box.type = 'search';
-    box.className = 'cis-names-filter';
-    box.placeholder = en ? 'Search laureates…' : 'Hledat nositele…';
-    box.setAttribute('aria-label', box.placeholder);
-    list.parentNode.insertBefore(box, list);
-    function norm(s) { return s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase(); }
-    box.addEventListener('input', function () {
-        var q = norm(box.value.trim());
-        Array.prototype.forEach.call(list.children, function (li) {
-            li.classList.toggle('is-hidden', q !== '' && norm(li.textContent).indexOf(q) === -1);
-        });
-    });
-});
-
 document.addEventListener('DOMContentLoaded', function () {
     var menu = document.querySelector('.cis-member-menu');
     if (!menu) return;
