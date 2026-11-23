@@ -1601,3 +1601,17 @@ header .tools { align-self: stretch; }
 .cis-member-menu .cis-member-icon { align-self: stretch; align-items: center; padding: 3px 10px 0; margin: 0 -10px; border-bottom: 3px solid transparent; }
 .cis-member-menu:hover .cis-member-icon, .cis-member-menu.is-open .cis-member-icon, .cis-member-menu:focus-within .cis-member-icon { color: var(--blue); border-color: var(--blue); }
 .cis-member-menu .cis-member-icon.is-in::after { top: calc(50% - 16px); right: 6px; }
+.cis-event-content .cis-agenda ul.cis-plain { margin: 0; padding: 0; list-style: none; }
+.cis-event-content .cis-agenda ul.cis-plain li { margin: 0 0 12px; padding: 0; line-height: 1.55; }
+.cis-event-content .cis-agenda ul.cis-plain li:last-child { margin-bottom: 0; }
+.cis-event .buttons { display: flex; flex-wrap: wrap; gap: 12px; margin: 30px 0 48px; }
+.cis-card-img { display: block; overflow: hidden; margin: -26px -24px 18px; }
+.cis-card-img img { display: block; width: 100%; height: 190px; object-fit: cover; transition: transform .6s ease; }
+.cis-card:hover .cis-card-img img { transform: scale(1.05); }
+/* News list: all cards the same size, "read more" always at the bottom. */
+.cis-cards-news { grid-auto-rows: 1fr; }
+.cis-cards-news .cis-card { display: flex; flex-direction: column; }
+.cis-cards-news .cis-card p { display: -webkit-box; -webkit-line-clamp: 4; line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
+.cis-cards-news .cis-card .more { margin-top: auto; }
+body .cis-cta p a:not(.btn), body .cis-highlight p a:not(.btn) { color: #fff !important; text-decoration: underline; text-underline-offset: 3px; }
+body .cis-cta p a:not(.btn):hover, body .cis-highlight p a:not(.btn):hover { color: #cfe3fb !important; }
